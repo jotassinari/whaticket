@@ -173,7 +173,35 @@ const verifyQueue = async (
       ticketId: ticket.id
     });
 
-    const body = formatBody(`\u200e${choosenQueue.greetingMessage}`, contact);
+    //personalizado para uso de dias e horas de atendimento
+	//const body = formatBody(`\u200e${choosenQueue.greetingMessage}`, contact);
+	const Hr = new Date();
+    let hh = Hr.getHours();
+    let ms = "";
+    var dsem = Hr.getDay();
+
+    if (dsem > 0 && dsem < 6){
+    //document.write(dsem);
+    //document.write(hh);
+        if (hh >= 0){
+            ms = "Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+        }
+        if (hh >= 8){
+            ms = "Bom dia. Bem vindo a Net e Cia Tecnologia. \n ";
+        }
+        if (hh > 11){
+            ms = "Boa tarde. Bem vindo a Net e Cia Tecnologia. \n ";
+        }
+        if (hh > 17){
+            ms = "Boa noite. Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+        }
+        //document.write(ms);
+    }else{
+        ms = "Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+    }
+    const body = `${ms}!\n\u200e${choosenQueue.greetingMessage}`;
+
+////////////////////////////////////////
 
     const sentMessage = await wbot.sendMessage(`${contact.number}@c.us`, body);
 
@@ -184,9 +212,36 @@ const verifyQueue = async (
     queues.forEach((queue, index) => {
       options += `*${index + 1}* - ${queue.name}\n`;
     });
+	
+	//personalizado para uso de dias e horas de atendimento
+    //const body = formatBody(`\u200e${greetingMessage}\n${options}`, contact);
+	const Hr = new Date();
+    let hh = Hr.getHours();
+    let ms = "";
+    var dsem = Hr.getDay();
 
-    const body = formatBody(`\u200e${greetingMessage}\n${options}`, contact);
-
+    if (dsem > 0 && dsem < 6){
+    //document.write(dsem);
+    //document.write(hh);
+        if (hh >= 0){
+            ms = "Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+        }
+        if (hh >= 8){
+            ms = "Bom dia. Bem vindo a Net e Cia Tecnologia. \n ";
+        }
+        if (hh > 11){
+            ms = "Boa tarde. Bem vindo a Net e Cia Tecnologia. \n ";
+        }
+        if (hh > 17){
+            ms = "Boa noite. Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+        }
+                  //document.write(ms);
+    }else{
+        ms = "Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+        }          
+    const body = `${ms}!\n\u200e${greetingMessage}\n${options}`;
+////////////////////////////////////////
+	
     const debouncedSentMessage = debounce(
       async () => {
         const sentMessage = await wbot.sendMessage(
