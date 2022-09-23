@@ -184,22 +184,23 @@ const verifyQueue = async (
     //document.write(dsem);
     //document.write(hh);
         if (hh >= 0){
-            ms = "Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+            ms = "Nosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
         }
         if (hh >= 8){
-            ms = "Bom dia. Bem vindo a Net e Cia Tecnologia. \n ";
+            ms = "Bom dia.\n ";
         }
         if (hh > 11){
-            ms = "Boa tarde. Bem vindo a Net e Cia Tecnologia. \n ";
+            ms = "Boa tarde.\n ";
         }
         if (hh > 17){
-            ms = "Boa noite. Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+            ms = "Boa noite. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
         }
         //document.write(ms);
     }else{
-        ms = "Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+        ms = "\nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
     }
-    const body = `${ms}!\n\u200e${choosenQueue.greetingMessage}`;
+	const body = `\u200e${choosenQueue.greetingMessage} - ${ms}`;
+    //const body = `${ms}!\n\u200e${choosenQueue.greetingMessage}`;
 
 ////////////////////////////////////////
 
@@ -224,22 +225,23 @@ const verifyQueue = async (
     //document.write(dsem);
     //document.write(hh);
         if (hh >= 0){
-            ms = "Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+            ms = "Nosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
         }
         if (hh >= 8){
-            ms = "Bom dia. Bem vindo a Net e Cia Tecnologia. \n ";
+            ms = "Bom dia.\n ";
         }
         if (hh > 11){
-            ms = "Boa tarde. Bem vindo a Net e Cia Tecnologia. \n ";
+            ms = "Boa tarde.\n ";
         }
         if (hh > 17){
-            ms = "Boa noite. Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+            ms = "Boa noite. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
         }
-                  //document.write(ms);
+        //document.write(ms);
     }else{
-        ms = "Bem vindo a Net e Cia Tecnologia. \nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
-        }          
-    const body = `${ms}!\n\u200e${greetingMessage}\n${options}`;
+        ms = "\nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nSe quiser adiantar o seu atendimento, pode deixar sua mensagem, que retornaremos no primeiro horário possível. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\n";
+    }          
+    const body = `\u200e${greetingMessage}${ms}\n${options}`;
+	//const body = `${ms}!\n\u200e${greetingMessage}\n${options}`;
 ////////////////////////////////////////
 	
     const debouncedSentMessage = debounce(
