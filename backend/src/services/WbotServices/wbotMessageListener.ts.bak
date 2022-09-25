@@ -235,7 +235,7 @@ const verifyQueue = async (
 				ms = "\nBom dia. " + mensForaDeHora;
 			}
 			if (hh >= primeiraHoraFds){
-				ms = "\n Selecione uma das opções abaixo: \n";
+				ms = "\nSelecione uma das opções abaixo: \n";
 			}
 			if (hh > ultimaHoraFds){
 				ms = "\n " + mensForaDeHora;
@@ -245,7 +245,7 @@ const verifyQueue = async (
 				ms = "\nBom dia. " + mensForaDeHora;
 			}
 			if (hh >= primeiraHoraSemana){
-				ms = "\n Selecione uma das opções abaixo: \n";
+				ms = "\nSelecione uma das opções abaixo: \n";
 			}
 			/*if (hh > 11){
 				ms = "\n Selecione uma das opções abaixo: \n";
