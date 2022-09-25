@@ -217,7 +217,7 @@ const LoggedInLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            Net e Cia Tickets - www.netecia.com.br
+            Net e Cia Tickets. www.netecia.com.br
           </Typography>
           {user.id && <NotificationsPopOver />}
 
