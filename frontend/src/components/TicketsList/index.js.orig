@@ -179,12 +179,12 @@ const reducer = (state, action) => {
 			type: "LOAD_TICKETS",
 			payload: tickets,
 		});
-	}, [tickets]);
+	}, [tickets, status, searchParam]);
 
 	useEffect(() => {
 		const socket = openSocket();
 
-		const shouldUpdateTicket = ticket => !searchParam &&
+		const shouldUpdateTicket = ticket =>
 			(!ticket.userId || ticket.userId === user?.id || showAll) &&
 			(!ticket.queueId || selectedQueueIds.indexOf(ticket.queueId) > -1);
 
@@ -244,7 +244,7 @@ const reducer = (state, action) => {
 		return () => {
 			socket.disconnect();
 		};
-	}, [status, searchParam, showAll, user, selectedQueueIds]);
+	}, [status, showAll, user, selectedQueueIds]);
 
 	useEffect(() => {
     if (typeof updateCount === "function") {
@@ -263,7 +263,6 @@ const reducer = (state, action) => {
 		const { scrollTop, scrollHeight, clientHeight } = e.currentTarget;
 
 		if (scrollHeight - (scrollTop + 100) < clientHeight) {
-			e.currentTarget.scrollTop = scrollTop - 100;
 			loadMore();
 		}
 	};
