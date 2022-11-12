@@ -216,7 +216,7 @@ const verifyQueue = async (
     let ms = "";
     var dsem = Hr.getDay(); //captura o dia da semana. Sendo 0 para domingo e 6 para sabado
 	
-	//Parametros ajustaveis
+	//Parametros ajustaveis 
 	var mensForaDeHora = "\nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\nSe quiser adiantar o seu atendimento, selecione o setor abaixo e deixe sua mensagem, que retornaremos no primeiro horário possível. \n";
 	var primeiroDia = 1; //padrao, segunda 1.
 	var ultimoDia = 6; //padrao, sexta 5.

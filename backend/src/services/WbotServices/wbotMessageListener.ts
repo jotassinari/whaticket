@@ -219,7 +219,7 @@ const verifyQueue = async (
 	//Parametros ajustaveis 
 	var mensForaDeHora = "\nNosso horário de atendimento é de segunda a sexta-feira das 8:00 as 18:00hrs. \nVocê pode também tirar muitas dúvidas pelo nosso canal no YouTube netecia.com.br/canal. \n\nSe quiser adiantar o seu atendimento, selecione o setor abaixo e deixe sua mensagem, que retornaremos no primeiro horário possível. \n";
 	var primeiroDia = 1; //padrao, segunda 1.
-	var ultimoDia = 6; //padrao, sexta 5.
+	var ultimoDia = 5; //padrao, sexta 5.
 	var primeiraHoraSemana = 8;
 	var ultimaHoraSemana = 17;//se fechar as 18 a ultima hora de trabalho é as 17
 	var primeiraHoraFds = 8;
