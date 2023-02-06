@@ -192,10 +192,11 @@ const verifyQueue = async (
 	}
      
 	
-	
-	const body = `\u200e${choosenQueue.greetingMessage} - ${ms}`;
-	
-    //const body = `${ms}!\n\u200e${choosenQueue.greetingMessage}`;
+	//bom dia depois da mensagem do que deseja
+	//const body = `\u200e${choosenQueue.greetingMessage} - ${ms}`;
+  
+	//bom dia antes da mensagem do que deseja
+    const body = `${ms}!\n\u200e${choosenQueue.greetingMessage}`;
 
 ////////////////////////////////////////
 
